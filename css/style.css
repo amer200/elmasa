@@ -6511,7 +6511,7 @@ h6 {
 /* footer */
 .footer {
   border-top: 1px solid #efefef;
-  background-color: #161F23;
+  background-color: #003e70;
   font-family: "Poppins", sans-serif;
 }
 
@@ -6547,6 +6547,10 @@ h6 {
   padding-top: 50px;
   text-align: center;
   /* color: #777; */
+}
+
+.footer .footer-text {
+  color: #fff;
 }
 
 .footer .footer-text a {
