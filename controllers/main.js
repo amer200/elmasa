@@ -9,18 +9,18 @@ exports.getMain = async (req, res) => {
 }
 exports.getProjects = async (req, res) => {
     const projects = await Project.find();
-    let allP = [];
     let lang = 'en';
     if (req.session.lang) {
         lang = req.session.lang;
     }
-    for (let i = 0; i <= projects.length; i+=2) {
-        let part;
-        part = projects.splice(i, 2);
-        allP.push(part)
-    }
+    const parts = projects.reduce(function (result, value, index, array) {
+        if (index % 2 === 0)
+            result.push(array.slice(index, index + 2));
+        return result;
+    }, []);
+    console.log(parts)
     res.render(`main-${lang}/project`, {
-        projects: allP
+        projects: parts
     })
 }
 exports.getAbout = async (req, res) => {
