@@ -7,7 +7,7 @@
                 <div class="col-lg-12">
                     <div class="breadcrumb_iner text-center">
                         <div class="breadcrumb_iner_item">
-                            <h2>Project</h2>
+                            <h2>Projects</h2>
                         </div>
                     </div>
                 </div>
@@ -22,36 +22,33 @@
             <div class="row justify-content-between">
                 <div class="col-lg-4">
                     <div class="section_tittle">
-                        <h2>our project</h2>
+                        <h2>our projects</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="project_slider owl-carousel">
-                        <div class="single_project_slide">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <img src="https://via.placeholder.com/70x70" alt="#">
-                                    <div class="single_project_text">
+                        <% projects.forEach(p=>{%>
+                            <div class="single_project_slide">
+                                <div class="row">
+                                    <% p.forEach(p=>{ %>
+                                        <div class="col-lg-6 col-md-6">
+                                            <img src="<%=p.imgs[0]%>" alt="#">
+                                            <div class="single_project_text">
 
-                                        <p>Lorem ipsum dolor sit amet lorem consectetur adipiscing look. </p>
-                                        <a href="single_project.html" class="btn_1">learn more <span><img
-                                                    src="img/icon/left.svg" alt=""></span> </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <img src="https://via.placeholder.com/70x70" alt="#">
-                                    <div class="single_project_text">
-
-                                        <p>Lorem ipsum dolor sit amet lorem consectetur adipiscing look. </p>
-                                        <a href="single_project.html" class="btn_1">learn more <span><img
-                                                    src="img/icon/left.svg" alt=""></span> </a>
-                                    </div>
+                                                <p>
+                                                    <%=p.desc.en.slice(8) %>...
+                                                </p>
+                                                <a href="/project/<%=p._id%>" class="btn_1">learn more <span><img
+                                                            src="/main/img/icon/left.svg" alt=""></span> </a>
+                                            </div>
+                                        </div>
+                                        <%})%>
                                 </div>
                             </div>
-                        </div>
-                        <div class="single_project_slide">
+                            <%})%>
+                                <!-- <div class="single_project_slide">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <img src="https://via.placeholder.com/270x315" alt="#">
@@ -71,49 +68,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- project_part part end-->
-
-    <!-- contact us part start-->
-    <!-- <section class="contact_us">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="contact_us_iner">
-                        <div class="row justify-content-around">
-                            <div class="col-lg-4">
-                                <div class="contact_us_left_text">
-                                    <h4>Melbourne</h4>
-                                    <span>Australia</span>
-                                    <p>324 King Heaven tower, House no, 15 King building
-                                        Melbourne ,VIC-222, Australia</p>
-                                    <p>Email: infoheaven@gmail.com <br>Phone no: 23113 6456 888</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="contact_us_right_text">
-                                    <h5>Call Directly;</h5>
-                                    <h2>(23131 65465 54)</h2>
-                                    <h5>Brand Office</h5>
-                                    <span>324 King Heaven tower, House no, 15 King
-                                        Melbourne ,VIC-222, Australia</span>
-                                    <h5>Working Hours:</h5>
-                                    <p>Monday - Friday / 9.00 PM - 5.00 AM</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- contact us part end-->
-
     <!-- map us part start-->
     <section class="map_part">
         <div class="container-fluid">
