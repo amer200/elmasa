@@ -1,0 +1,47 @@
+<div class="col-6 d-none all-forms" id="faq">
+    <div class="row">
+        <div class="col-12" style="margin-bottom: 10px;">
+            <form action="/admin/add-faq" method="post">
+                <h4>add new faq</h4>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Question</label>
+                    <input type="text" name="qen" class="form-control" placeholder="Question">
+                    <label for="title" class="form-label">السوؤال</label>
+                    <input type="text" name="qar" class="form-control" placeholder="السوؤال">
+                </div>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Answer</label>
+                    <input type="text" name="wen" class="form-control" placeholder="Answer">
+                    <label for="title" class="form-label">الاجابة</label>
+                    <input type="text" name="war" class="form-control" placeholder="الاجابة">
+                </div>
+                <button type="submit" class="btn btn-dark">submit</button>
+            </form>
+        </div>
+        <hr>
+        <div class="col-12" style="margin-top: 10px;">
+            <h4>edit faq</h4>
+            <ul class="list-group">
+                <% faqs.forEach(s=>{%>
+                    <li class="list-group-item"><span>
+                            <%=s.q.en%> / <%=s.q.ar%>
+                        </span><button type="button" class="btn btn-danger" onclick="removeFaq('<%=s._id%>')"
+                            style="float: right;">remove</button></li>
+                    <%})%>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    const removeFaq = (id) => {
+        if (confirm('warn! you will dellete this faq?')) {
+            fetch(`/admin/remove-faq/${id}`)
+                .then(res => {
+                    return location.reload()
+                })
+                .catch(err => {
+                    alert(err)
+                })
+        }
+    }
+</script>

@@ -1,0 +1,131 @@
+<%- include('includes/head') %>
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>about us</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <!-- home tips start-->
+    <section class="home_tips padding_top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <%if(about){%>
+                        <div class="home_tips_text text-center">
+                            <h1>About Us</h1>
+                            <p>
+                                <%= about.en%>
+                            </p>
+                        </div>
+                        <%}else{%>
+                            <div class="home_tips_text text-center">
+                                <h1>About Us</h1>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, eius velit deserunt
+                                    nisi libero dolor ratione odit sint, rerum, maiores doloribus natus! Magnam totam
+                                    veritatis fugiat eveniet sapiente aliquid blanditiis.
+                                </p>
+                            </div>
+                            <%}%>
+                                <div class="home_tips_video_popup">
+                                    <img src="/main/img/video_popup.png" alt="#">
+                                    <div class="extends_video">
+                                        <div class="intro_video_iner text-center d-flex align-items-center">
+                                            <div class="intro_video_icon">
+                                                <a id="play-video_1" class="video-play-button popup-youtube"
+                                                    href="https://www.youtube.com/watch?v=pBFQdxA-apI">
+                                                    <i class="fas fa-caret-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- home tips start-->
+
+    <div class="overlay_section">
+
+    </div>
+
+    <!-- single special page item start -->
+    <section class="single_page_special">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="single_page_special_item owl-carousel">
+                        <div class="single_slide_item">
+                            <img src="https://via.placeholder.com/70x70" alt="">
+                            <div class="single_special_text">
+                                <h3>Inovative</h3>
+                                <p>Living Over He god living Creature that appear place</p>
+                            </div>
+                        </div>
+                        <div class="single_slide_item">
+                            <img src="https://via.placeholder.com/70x70" alt="">
+                            <div class="single_special_text">
+                                <h3>Inovative</h3>
+                                <p>Living Over He god living Creature that appear place</p>
+                            </div>
+                        </div>
+                        <div class="single_slide_item">
+                            <img src="https://via.placeholder.com/70x70" alt="">
+                            <div class="single_special_text">
+                                <h3>Inovative</h3>
+                                <p>Living Over He god living Creature that appear place</p>
+                            </div>
+                        </div>
+                        <div class="single_slide_item">
+                            <img src="https://via.placeholder.com/70x70" alt="">
+                            <div class="single_special_text">
+                                <h3>Inovative</h3>
+                                <p>Living Over He god living Creature that appear place</p>
+                            </div>
+                        </div>
+                        <div class="single_slide_item">
+                            <img src="https://via.placeholder.com/70x70" alt="">
+                            <div class="single_special_text">
+                                <h3>Inovative</h3>
+                                <p>Living Over He god living Creature that appear place</p>
+                            </div>
+                        </div>
+                        <div class="single_slide_item">
+                            <img src="https://via.placeholder.com/70x70" alt="">
+                            <div class="single_special_text">
+                                <h3>Inovative</h3>
+                                <p>Living Over He god living Creature that appear place</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- map us part start-->
+    <section class="map_part">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="map_iner">
+                        <div class="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- map us part end-->
+
+    <%- include('includes/footer') %>

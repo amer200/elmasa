@@ -1,0 +1,31 @@
+<div class="col-6 d-none all-forms" id="about">
+    <form action="/admin/about" method="post" enctype="multipart/form-data">
+        <h4>about smart space</h4>
+        <% if(about){ %>
+            <div class="mb-3">
+                <label for="txt">content</label>
+                <textarea name="en" class="form-control" cols="30" rows="6"><%=about.en%></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="txt">المحتوى</label>
+                <textarea name="ar" class="form-control" cols="30" rows="6"><%=about.ar%></textarea>
+            </div>
+            <div class="mb-3">
+                <input type="file" name="img" class="form-control">
+            </div>
+            <%}else{%>
+                <div class="mb-3">
+                    <label for="txt">content</label>
+                    <textarea name="en" class="form-control" cols="30" rows="6"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="txt">المحتوى</label>
+                    <textarea name="ar" class="form-control" cols="30" rows="6"></textarea>
+                </div>
+                <div class="mb-3">
+                    <input type="file" name="img" class="form-control">
+                </div>
+                <%}%>
+                    <button type="submit" class="btn btn-dark">submit</button>
+    </form>
+</div>

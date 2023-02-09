@@ -1,0 +1,51 @@
+<div class="col-6 d-none all-forms" id="serv">
+    <div class="row">
+        <div class="col-12" style="margin-bottom: 10px;">
+            <form action="/admin/add-serv" method="post" enctype="multipart/form-data">
+                <h4>add new service</h4>
+                <div class="mb-3">
+                    <label for="title" class="form-label">title</label>
+                    <input type="text" name="titleen" class="form-control" placeholder="titel">
+                    <label for="title" class="form-label">العنوان</label>
+                    <input type="text" name="titlear" class="form-control" placeholder="العنوان">
+                </div>
+                <div class="mb-3">
+                    <label for="txt">content</label>
+                    <textarea name="en" class="form-control" cols="30" rows="6"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="txt">المحتوى</label>
+                    <textarea name="ar" class="form-control" cols="30" rows="6"></textarea>
+                </div>
+                <div class="mb-3">
+                    <input type="file" name="img" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-dark">submit</button>
+            </form>
+        </div>
+        <hr>
+        <div class="col-12" style="margin-top: 10px;">
+            <h4>edit Services</h4>
+            <ul class="list-group">
+                <% servs.forEach(s=>{%>
+                    <li class="list-group-item"><img src="<%=s.img%>" alt="img" style="width: 80px;
+                        height: 50px;"> <button type="button" class="btn btn-danger" onclick="removeServ('<%=s._id%>')"
+                            style="float: right;">remove</button></li>
+                    <%})%>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    const removeServ = (id) => {
+        if (confirm('warn! you will dellete this serv?')) {
+            fetch(`/admin/remove-serv/${id}`)
+                .then(res => {
+                    return location.reload()
+                })
+                .catch(err => {
+                    alert(err)
+                })
+        }
+    }
+</script>

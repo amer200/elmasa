@@ -1,0 +1,49 @@
+<div class="col-6 d-none all-forms" id="slider">
+    <div class="row">
+        <div class="col-12" style="margin-bottom: 10px;">
+            <form action="/admin/add-slide" method="post" enctype="multipart/form-data">
+                <h4>add new carousel</h4>
+                <div class="mb-3">
+                    <label for="titleOne" class="form-label">first title</label>
+                    <input type="text" name="title1en" class="form-control" placeholder="titel 1">
+                    <label for="titleOne" class="form-label">العنوان الاول</label>
+                    <input type="text" name="title1ar" class="form-control" placeholder="العنوان 1">
+                </div>
+                <div class="mb-3">
+                    <label for="titletwow" class="form-label">second title</label>
+                    <input type="text" name="title2en" class="form-control" placeholder="titel 2">
+                    <label for="titletwow" class="form-label">العنوان الثاني</label>
+                    <input type="text" name="title2ar" class="form-control" placeholder="العنوان 2">
+                </div>
+                <div class="mb-3">
+                    <input type="file" name="img" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-dark">submit</button>
+            </form>
+        </div>
+        <hr>
+        <div class="col-12" style="margin-top: 10px;">
+            <h4>edit slides</h4>
+            <ul class="list-group">
+                <% slides.forEach(s=>{%>
+                    <li class="list-group-item"><img src="<%=s.img%>" alt="img" style="width: 80px;
+                        height: 50px;"> <button type="button" class="btn btn-danger"
+                            onclick="removeSlide('<%=s._id%>')" style="float: right;">remove</button></li>
+                    <%})%>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    const removeSlide = (id) => {
+        if (confirm('warn! you will dellete this slide?')) {
+            fetch(`/admin/remove-slide/${id}`)
+                .then(res => {
+                    return location.reload()
+                })
+                .catch(err => {
+                    alert(err)
+                })
+        }
+    }
+</script>

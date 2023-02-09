@@ -1,0 +1,23 @@
+body {
+    background: #ddd;
+}
+
+.nav-item span {
+    color: #fff;
+}
+
+.form-serv {
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+li {
+    cursor: default;
+}
+
+.py-3 {
+    background-image: url(/main/img/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
