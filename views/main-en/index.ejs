@@ -5,42 +5,24 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="banner_text">
-                        <div class="banner_text_iner">
-                            <h5>ARCHITECTURE + DESIGN</h5>
-                            <h1>HEAVEN X LEATEST
-                                PROJECT</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.</p>
-                            <div class="banner_btn">
-                                <a href="single_project.html" class="btn_1">learn more <span><img
-                                            src="img/icon/left.svg" alt=""></span>
-                                </a>
+                        <% projects.forEach(p=>{ %>
+                            <div class="banner_text_iner">
+                                <h5>
+                                    <%=p.categ.en%>
+                                </h5>
+                                <h1>
+                                    <%=p.name.en%>
+                                </h1>
+                                <p>
+                                    <%= p.desc.en.slice(20)%> ...
+                                </p>
+                                <div class="banner_btn">
+                                    <a href="/project/<%=p._id%>" class="btn_1">learn more <span><img
+                                                src="/main/img/icon/left.svg" alt=""></span>
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="banner_text_iner">
-                            <h5>DESIGN + ARCHITECTURE</h5>
-                            <h1>HEAVEN X LEATEST
-                                PROJECT</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.</p>
-                            <div class="banner_btn">
-                                <a href="single_project.html" class="btn_1">learn more <span><img
-                                            src="img/icon/left.svg" alt=""></span>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="banner_text_iner">
-                            <h5>ARCHITECTURE + DESIGN</h5>
-                            <h1>HEAVEN X LEATEST
-                                PROJECT</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua.</p>
-                            <div class="banner_btn">
-                                <a href="single_project.html" class="btn_1">learn more <span><img
-                                            src="img/icon/left.svg" alt=""></span>
-                                </a>
-                            </div>
-                        </div>
+                            <%})%>
                     </div>
                     <div class="nav next"><a href="#"><span class="flaticon-left-arrow"></span></a></div>
                     <div class="nav prev"><a href="#"><span class="flaticon-right-arrow"></span></a></div>
@@ -89,16 +71,16 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="about_part_text">
                         <h2>About Us</h2>
-                        <p>Living. Over. He god, living a. Creature that appear place creeping upon.
-                            It you said seas every creeping and a life shall unto, years hath seed be
-                            called light him cattle. They're cattle creepeth void given rule evening
-                            stars midst saying light greater</p>
-                        <a href="#" class="btn_1">learn more <span><img src="img/icon/left.svg" alt=""></span> </a>
+                        <p>
+                            <%=about.en.slice(100)%>...
+                        </p>
+                        <a href="/about" class="btn_1">learn more <span><img src="/main/img/icon/left.svg"
+                                    alt=""></span> </a>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-6">
                     <div class="about_img">
-                        <img src="https://via.placeholder.com/745x475" alt="#">
+                        <img src="<%=about.img%>" alt="#">
                     </div>
                 </div>
             </div>
@@ -113,43 +95,32 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section_tittle">
-                        <h2>our service</h2>
+                        <h2>our services</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="service_slider owl-carousel">
-                        <div class="single_service_slide">
-                            <div class="row justify-content-end align-items-center single_service">
-                                <div class="col-lg-6 col-md-6">
-                                    <img src="https://via.placeholder.com/270x315" alt="#">
-                                </div>
-                                <div class="col-lg-5 col-md-6">
-                                    <div class="service_text">
-                                        <h3>Home Decor</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-                                            ipsum </p>
+                        <% servs.forEach(s=>{ %>
+                            <div class="single_service_slide">
+                                <div class="row justify-content-end align-items-center single_service">
+                                    <div class="col-lg-6 col-md-6">
+                                        <img src="<%=s.img%>" alt="#">
+                                    </div>
+                                    <div class="col-lg-5 col-md-6">
+                                        <div class="service_text">
+                                            <h3>
+                                                <%=s.title.en%>
+                                            </h3>
+                                            <p>
+                                                <%=s.content.en%>
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="single_service_slide">
-                            <div class="row justify-content-end align-items-center single_service">
-                                <div class="col-lg-6 col-md-6">
-                                    <img src="https://via.placeholder.com/270x315" alt="#">
-                                </div>
-                                <div class="col-lg-5 col-md-6">
-                                    <div class="service_text">
-                                        <h3>Home Decor</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-                                            ipsum </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <%})%>
                     </div>
                 </div>
             </div>
@@ -163,56 +134,32 @@
             <div class="row justify-content-between">
                 <div class="col-lg-4">
                     <div class="section_tittle">
-                        <h2>our project</h2>
+                        <h2>our projects</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="project_slider owl-carousel">
-                        <div class="single_project_slide">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <img src="https://via.placeholder.com/270x315" alt="#">
-                                    <div class="single_project_text">
+                        <% projectsP.forEach(p=>{%>
+                            <div class="single_project_slide">
+                                <div class="row">
+                                    <% p.forEach(p=>{ %>
+                                        <div class="col-lg-6 col-md-6">
+                                            <img src="<%=p.imgs[0]%>" alt="#">
+                                            <div class="single_project_text">
 
-                                        <p>Lorem ipsum dolor sit amet lorem consectetur adipiscing look. </p>
-                                        <a href="single_project.html" class="btn_1">learn more <span><img
-                                                    src="img/icon/left.svg" alt=""></span> </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <img src="https://via.placeholder.com/270x315" alt="#">
-                                    <div class="single_project_text">
-
-                                        <p>Lorem ipsum dolor sit amet lorem consectetur adipiscing look. </p>
-                                        <a href="single_project.html" class="btn_1">learn more <span><img
-                                                    src="img/icon/left.svg" alt=""></span> </a>
-                                    </div>
+                                                <p>
+                                                    <%=p.desc.en.slice(8) %>...
+                                                </p>
+                                                <a href="/project/<%=p._id%>" class="btn_1">learn more <span><img
+                                                            src="/main/img/icon/left.svg" alt=""></span> </a>
+                                            </div>
+                                        </div>
+                                        <%})%>
                                 </div>
                             </div>
-                        </div>
-                        <div class="single_project_slide">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <img src="https://via.placeholder.com/270x315" alt="#">
-                                    <div class="single_project_text">
-
-                                        <p>Lorem ipsum dolor sit amet lorem consectetur adipiscing look. </p>
-                                        <a href="single_project.html" class="btn_1">learn more <span><img
-                                                    src="img/icon/left.svg" alt=""></span> </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <img src="https://via.placeholder.com/270x315" alt="#">
-                                    <div class="single_project_text">
-                                        <p>Lorem ipsum dolor sit amet lorem consectetur adipiscing look. </p>
-                                        <a href="single_project.html" class="btn_1">learn more <span><img
-                                                    src="img/icon/left.svg" alt=""></span> </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <%})%>
                     </div>
                 </div>
             </div>

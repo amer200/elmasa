@@ -21,39 +21,27 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="project_details_img">
-                        <img src="https://via.placeholder.com/1200x500" alt="#">
+                        <img src="<%=p.imgs[0]%>" alt="#">
                     </div>
                 </div>
                 <div class="col-lg-8">
                     <div class="project_details_text">
                         <h2>Project Description</h2>
-                        <p>Morning stars his air won't brought be lesser. That he and him given saying
-                            gathering morning firmament great can't so, also creeping seas you'll so from
-                            he two man god tree years Midst called fowl midst air whose female. Morning
-                            stars his air won't brought be lesser. That he and him given saying gather
-                            mornin firmament great can't so, also creeping seas you so from he </p>
-                        <p>Morning stars his air won't brought be lesser. That he and him given saying
-                            gathering morning firmament great can't so, also creeping seas you'll so from
-                            he two man god tree years Midst called fowl midst air whose female. Morning
-                            stars his air won't brought be lesser. That he and him given saying gather
-                            mornin firmament great can't so, also creeping seas you so from he morning
-                            stars his air won't brought be lesser. That he and him given saying gathering
-                            morning firmament great can't so, also creeping seas you'll so from he two man
-                            god tree years Midst called fowl midst air day whose female. </p>
-                        <p>Morning stars his air won't brought be lesser. That he and him given saying
-                            gathering morning firmament great can't so, also creeping seas you'll so
-                            from he two man god tree years Midst called fowl midst air whose female.
-                            Morning stars his air won't brought be lesser. That he and </p>
+                        <p>
+                            <%= p.desc.en%>
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="project_details_sidebar">
                         <h4>Client details</h4>
-                        <p><i class="ti-user"></i>Client: <span>Adam Ghilcrist</span> </p>
-                        <p><i class="ti-user"></i>Category: <span>Interior Design</span> </p>
-                        <p><i class="ti-user"></i>Starts on:: <span>20 May 2018</span> </p>
-                        <p><i class="ti-user"></i>Ends on: <span>30 May 2019</span> </p>
-                        <p><i class="ti-user"></i>Location: <span>New York</span> </p>
+                        <% p.details.forEach(d=>{ %>
+                            <p style="text-align: left;"><i class="ti-user"></i>
+                                <%=d.name.en%>: <span style="float: none">
+                                        <%=d.data.en%>
+                                    </span>
+                            </p>
+                            <%})%>
                     </div>
                 </div>
             </div>
@@ -70,40 +58,21 @@
                     <div class="grid gallery">
                         <div class="grid-sizer"></div>
                         <div class="grid-item big_weight">
-                            <a href="https://via.placeholder.com/700x600" class="">
+                            <a href="<%=p.imgs[0]%>" class="">
                                 <div class="project_img">
-                                    <img src="https://via.placeholder.com/700x600" alt="">
+                                    <img src="<%=p.imgs[0]%>" alt="">
                                 </div>
                             </a>
                         </div>
-                        <div class="grid-item">
-                            <a href="https://via.placeholder.com/500x400" class="">
-                                <div class="project_img">
-                                    <img src="https://via.placeholder.com/500x400" alt="">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="grid-item">
-                            <a href="https://via.placeholder.com/500x400" class="">
-                                <div class="project_img">
-                                    <img src="https://via.placeholder.com/500x400" alt="">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="grid-item">
-                            <a href="https://via.placeholder.com/500x400" class="">
-                                <div class="project_img">
-                                    <img src="https://via.placeholder.com/500x400" alt="">
-                                </div>
-                            </a>
-                        </div>
-                        <div class="grid-item">
-                            <a href="https://via.placeholder.com/500x500" class="">
-                                <div class="project_img">
-                                    <img src="https://via.placeholder.com/500x400" alt="">
-                                </div>
-                            </a>
-                        </div>
+                        <% for(let i=1; i < p.imgs.length; i++){%>
+                            <div class="grid-item">
+                                <a href="<%=p.imgs[i]%>" class="">
+                                    <div class="project_img">
+                                        <img src="<%=p.imgs[i]%>" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                            <%}%>
                     </div>
 
                 </div>
@@ -111,41 +80,6 @@
         </div>
     </section>
     <!-- project details gallery start-->
-
-    <!-- contact us part start-->
-    <!-- <section class="contact_us">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="contact_us_iner">
-                        <div class="row justify-content-around">
-                            <div class="col-lg-4">
-                                <div class="contact_us_left_text">
-                                    <h4>Melbourne</h4>
-                                    <span>Australia</span>
-                                    <p>324 King Heaven tower, House no, 15 King building
-                                        Melbourne ,VIC-222, Australia</p>
-                                    <p>Email: infoheaven@gmail.com <br>Phone no: 23113 6456 888</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="contact_us_right_text">
-                                    <h5>Call Directly;</h5>
-                                    <h2>(23131 65465 54)</h2>
-                                    <h5>Brand Office</h5>
-                                    <span>324 King Heaven tower, House no, 15 King
-                                        Melbourne ,VIC-222, Australia</span>
-                                    <h5>Working Hours:</h5>
-                                    <p>Monday - Friday / 9.00 PM - 5.00 AM</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- contact us part end-->
 
     <!-- map us part start-->
     <section class="map_part">

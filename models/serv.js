@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const servSchema = mongoose.Schema({
     img: String,
-    contetn: {
+    content: {
         ar: String,
         en: String
     },

@@ -9,8 +9,8 @@ route.get('/', isAuth.isAdmin, adminController.getMain);
 /************************** about *********************************** */
 route.post('/about', isAuth.isAdmin, adminController.about);
 /********************************services *****************************/
-// route.post('/add-serv', isAuth.isAdmin, adminController.addServ);
-// route.get('/remove-serv/:id', isAuth.isAdmin, adminController.removeServ);
+route.post('/add-serv', isAuth.isAdmin, adminController.addServ);
+route.get('/remove-serv/:id', isAuth.isAdmin, adminController.removeServ);
 /****************************projects *********************************/
 route.post('/add-project-categ', isAuth.isAdmin, adminController.addProjectCateg);
 route.get('/remove-project-categ/:id', isAuth.isAdmin, adminController.removeProjectCateg);
