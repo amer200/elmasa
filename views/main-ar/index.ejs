@@ -1,0 +1,219 @@
+<%- include('includes/head') %>
+    <!-- banner part start-->
+    <section class="banner_part">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner_text">
+                        <% projects.forEach(p=>{ %>
+                            <div class="banner_text_iner">
+                                <h5>
+                                    <%=p.categ.ar%>
+                                </h5>
+                                <h1>
+                                    <%=p.name.ar%>
+                                </h1>
+                                <p>
+                                    <%= p.desc.ar.slice(20)%> ...
+                                </p>
+                                <div class="banner_btn">
+                                    <a href="/project/<%=p._id%>" class="btn_1">learn more <span><img
+                                                src="/main/img/icon/left.svg" alt=""></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <%})%>
+                    </div>
+                    <div class="nav next"><a href="#"><span class="flaticon-left-arrow"></span></a></div>
+                    <div class="nav prev"><a href="#"><span class="flaticon-right-arrow"></span></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- banner part start-->
+
+    <!-- banner part start-->
+    <div class="our_speciality">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="single_special_part border_left">
+                        <img src="https://via.placeholder.com/70x70" alt="">
+                        <div class="single_special_text">
+                            <h3>Inovative</h3>
+                            <p>Living Over He god living Creature that appear place</p>
+                        </div>
+                    </div>
+                    <div class="single_special_part border_left">
+                        <img src="https://via.placeholder.com/70x70" alt="">
+                        <div class="single_special_text">
+                            <h3>Inovative</h3>
+                            <p>Living Over He god living Creature that appear place</p>
+                        </div>
+                    </div>
+                    <div class="single_special_part border_left">
+                        <img src="https://via.placeholder.com/70x70" alt="">
+                        <div class="single_special_text">
+                            <h3>Inovative</h3>
+                            <p>Living Over He god living Creature that appear place</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner part start-->
+
+    <!-- about part start-->
+    <div class="about_part section_bg">
+        <div class="container-fluid">
+            <div class="row justify-content-end">
+                <div class="col-lg-4 col-md-6">
+                    <div class="about_part_text" style="text-align: right;">
+                        <h2>من نحن</h2>
+                        <p>
+
+                            <%=about.ar.slice(0,300)%>
+                        </p>
+                        <a href="/about" class="btn_1">المزيد<span><img src="/main/img/icon/left.svg" alt=""></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-6">
+                    <div class="about_img">
+                        <img src="<%=about.img%>" alt="#">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about part end-->
+
+
+    <!-- service part start-->
+    <section class="service_part">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section_tittle">
+                        <h2>خدماتنا</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="service_slider owl-carousel">
+                        <% servs.forEach(s=>{ %>
+                            <div class="single_service_slide">
+                                <div class="row justify-content-end align-items-center single_service">
+                                    <div class="col-lg-6 col-md-6">
+                                        <img src="<%=s.img%>" alt="#">
+                                    </div>
+                                    <div class="col-lg-5 col-md-6">
+                                        <div class="service_text" style="text-align: right;">
+                                            <h3>
+                                                <%=s.title.ar%>
+                                            </h3>
+                                            <p>
+                                                <%=s.content.ar%>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <%})%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- service part end-->
+
+    <!-- project_part part start-->
+    <section class="project_part padding_bottom">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-4">
+                    <div class="section_tittle">
+                        <h2>مشاريعنا</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="project_slider owl-carousel">
+                        <% projectsP.forEach(p=>{%>
+                            <div class="single_project_slide">
+                                <div class="row">
+                                    <% p.forEach(p=>{ %>
+                                        <div class="col-lg-6 col-md-6">
+                                            <img src="<%=p.imgs[0]%>" alt="#">
+                                            <div class="single_project_text" style="text-align: right;">
+
+                                                <p>
+                                                    <%=p.desc.ar.slice(8) %>...
+                                                </p>
+                                                <a href="/project/<%=p._id%>" class="btn_1">المزيد<span><img
+                                                            src="/main/img/icon/left.svg" alt=""></span> </a>
+                                            </div>
+                                        </div>
+                                        <%})%>
+                                </div>
+                            </div>
+                            <%})%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- project_part part end-->
+    <!-- contact us part start-->
+    <!-- <section class="contact_us">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="contact_us_iner">
+                        <div class="row justify-content-around">
+                            <div class="col-lg-4">
+                                <div class="contact_us_left_text">
+                                    <h4>
+                                        <div class="logo">
+                                            <a href="#">
+                                                <img src="img/logo.png" alt="">
+                                            </a>
+                                        </div>
+                                    </h4>
+                                    <p>324 King Heaven tower, House no, 15 King building
+                                        Melbourne ,VIC-222, Australia</p>
+                                    <p>Email: infoheaven@gmail.com <br>Phone no: 23113 6456 888</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="contact_us_right_text">
+                                    <h5>Call Directly;</h5>
+                                    <h2>(23131 65465 54)</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- contact us part end -->
+
+    <!-- map us part start-->
+    <section class="map_part">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="map_iner">
+                        <div class="map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- map us part end-->
+
+    <%- include('includes/footer') %>

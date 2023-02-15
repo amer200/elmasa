@@ -74,3 +74,8 @@ exports.getContact = async (req, res) => {
     }
     res.render(`main-${lang}/contact`)
 }
+exports.changeLang = (req, res) => {
+    const lang = req.params.l;
+    req.session.lang = lang;
+    res.redirect('/')
+}

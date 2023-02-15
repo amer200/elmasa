@@ -10,4 +10,5 @@ routes.get('/projects', mainControllers.getProjects);
 routes.get('/project/:id', mainControllers.getProjectById);
 routes.get('/service', mainControllers.getServices);
 routes.get('/contact', mainControllers.getContact);
+routes.get('/lang/:l', mainControllers.changeLang);
 module.exports = routes;
