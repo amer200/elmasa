@@ -194,3 +194,19 @@ exports.removeServ = (req, res) => {
             console.log(err)
         })
 }
+exports.getAdminLogin = (req, res) => {
+    res.render('admin/login')
+}
+exports.postAdminLogin = (req, res) => {
+    const password = req.body.password;
+    if (password == process.env.ADMINPASSWORD) {
+        req.session.admin = true;
+        res.redirect('/admin')
+    } else {
+        res.send('error: wrong password !')
+    }
+}
+exports.adminLogOut = (req, res) => {
+    req.session.destroy();
+    res.redirect('/')
+}

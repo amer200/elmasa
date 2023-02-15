@@ -20,7 +20,7 @@ route.get('/remove-project/:id', isAuth.isAdmin, adminController.removeProject)
 // route.post('/add-faq', isAuth.isAdmin, adminController.addFaq);
 // route.get('/remove-faq/:id', isAuth.isAdmin, adminController.removeFaq);
 /**********************login ********************************************/
-// route.get('/login', adminController.getAdminLogin);
-// route.post('/login', adminController.postAdminLogin);
-// route.get('/signout', isAuth.isAdmin, adminController.adminLogOut);
+route.get('/login', adminController.getAdminLogin);
+route.post('/login', adminController.postAdminLogin);
+route.get('/signout', isAuth.isAdmin, adminController.adminLogOut);
 module.exports = route;
