@@ -26,29 +26,21 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="service_slider owl-carousel">
-                        <%servs.forEach(s=>{ %>
-                            <div class="single_service_slide">
-                                <div class="row justify-content-end align-items-center single_service">
-                                    <div class="col-lg-6 col-md-6">
-                                        <img src="<%=s.img%>" alt="#">
-                                    </div>
-                                    <div class="col-lg-5 col-md-6">
-                                        <div class="service_text" style="text-align: right;">
-                                            <h3>
-                                                <%=s.title.ar%>
-                                            </h3>
-                                            <p>
-                                                <%=s.content.ar%>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                <%servs.forEach(s=>{ %>
+                    <div class="col-lg-3">
+                        <div class="card" style="width: 100%">
+                            <img src="<%=s.img%>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <%=s.title.ar%>
+                                </h5>
+                                <p class="card-text">
+                                    <%=s.content.ar%>
+                                </p>
                             </div>
-                            <%})%>
+                        </div>
                     </div>
-                </div>
+                    <%})%>
             </div>
         </div>
     </section>
