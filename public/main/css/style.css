@@ -3103,7 +3103,7 @@ ul {
 
 /* line 1, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_service_part.scss */
 .service_part {
-  padding: 445px 0px 130px;
+  padding: 135px 0px 130px;
   background-image: url(../img/services_bg.png);
   background-position: center left;
   background-size: contain;
@@ -7010,7 +7010,8 @@ h6 {
     width: 90px;
     height: 90px;
   }
-  .lang{
+
+  .lang {
     right: -10%;
   }
 }

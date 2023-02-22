@@ -27,13 +27,8 @@ exports.getProjects = async (req, res) => {
     if (req.session.lang) {
         lang = req.session.lang;
     }
-    const parts = projects.reduce(function (result, value, index, array) {
-        if (index % 2 === 0)
-            result.push(array.slice(index, index + 2));
-        return result;
-    }, []);
     res.render(`main-${lang}/project`, {
-        projects: parts
+        projects: projects
     })
 }
 exports.getProjectById = async (req, res) => {
