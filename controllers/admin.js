@@ -54,40 +54,40 @@ exports.about = (req, res) => {
 }
 /* projects */
 exports.addProject = (req, res) => {
-    let details = [];
-    const detailsNar = req.body.detailsnamear;
-    const detailsNen = req.body.detailsnameen;
-    const detailsDar = req.body.detailsdataar;
-    const detailsDen = req.body.detailsdataen;
-    if (typeof detailsDen == 'string') {
-        details = [
-            {
-                name: {
-                    ar: detailsNar,
-                    en: detailsNen
-                },
-                data: {
-                    ar: detailsDar,
-                    en: detailsDen
-                }
-            }
-        ]
-    } else {
-        for (let i = 0; i < detailsDar.length; i++) {
-            let o =
-            {
-                name: {
-                    ar: detailsNar[i],
-                    en: detailsNen[i]
-                },
-                data: {
-                    ar: detailsDar[i],
-                    en: detailsDen[i]
-                }
-            }
-            details.push(o);
-        }
-    }
+    // let details = [];
+    // const detailsNar = req.body.detailsnamear;
+    // const detailsNen = 2;
+    // const detailsDar = req.body.detailsdataar;
+    // const detailsDen = 2;
+    // if (!true) {
+    //     details = [
+    //         {
+    //             name: {
+    //                 ar: detailsNar,
+    //                 en: detailsNen
+    //             },
+    //             data: {
+    //                 ar: detailsDar,
+    //                 en: detailsDen
+    //             }
+    //         }
+    //     ]
+    // } else {
+    //     for (let i = 0; i < detailsDar.length; i++) {
+    //         let o =
+    //         {
+    //             name: {
+    //                 ar: detailsNar[i],
+    //                 en: detailsNen[i]
+    //             },
+    //             data: {
+    //                 ar: detailsDar[i],
+    //                 en: detailsDen[i]
+    //             }
+    //         }
+    //         details.push(o);
+    //     }
+    // }
     const name = {
         ar: req.body.namear,
         en: req.body.nameen
@@ -105,7 +105,6 @@ exports.addProject = (req, res) => {
         name: name,
         desc: desc,
         categ: categ,
-        details: details,
         imgs: imgs
     })
     project.save()
