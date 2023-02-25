@@ -27,6 +27,7 @@ exports.getProjects = async (req, res) => {
     if (req.session.lang) {
         lang = req.session.lang;
     }
+    console.log(projects[0])
     res.render(`main-${lang}/project`, {
         projects: projects
     })
