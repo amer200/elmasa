@@ -24,24 +24,12 @@
                         <img src="<%=p.imgs[0]%>" alt="#">
                     </div>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-10">
                     <div class="project_details_text">
                         <h2>Project Description</h2>
                         <p>
                             <%= p.desc.en%>
                         </p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="project_details_sidebar">
-                        <h4>Client details</h4>
-                        <% p.details.forEach(d=>{ %>
-                            <p style="text-align: left;"><i class="ti-user"></i>
-                                <%=d.name.en%>: <span style="float: none">
-                                        <%=d.data.en%>
-                                    </span>
-                            </p>
-                            <%})%>
                     </div>
                 </div>
             </div>

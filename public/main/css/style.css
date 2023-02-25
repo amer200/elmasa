@@ -2597,9 +2597,9 @@ ul {
 .banner_part {
   height: 890px;
   position: relative;
-  background-image: url(https://via.placeholder.com/1900x800);
+  background-image: url(/main/img/main-img.png);
   background-repeat: no-repeat;
-  background-size: 100% auto;
+  background-size: 100%;
   background-position: center;
   background-size: cover;
   z-index: 2;
@@ -2647,7 +2647,8 @@ ul {
 
   /* line 2, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_banner.scss */
   .banner_part {
-    background-size: cover;
+    background-size: 1280px 635px;
+    background-position: top;
   }
 }
 
@@ -6407,10 +6408,11 @@ h6 {
 /************* breadcrumb css start *****************/
 /* line 2, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_breadcrumb.scss */
 .breadcrumb_bg {
-  background-image: url("https://via.placeholder.com/1920x500");
+  background-image: url("../img/page-header.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  height: 335px;
 }
 
 /* line 5, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_breadcrumb.scss */
@@ -6439,7 +6441,7 @@ h6 {
   color: #fff;
   font-size: 100px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 140px;
   text-transform: capitalize;
 }
 

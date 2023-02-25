@@ -19,11 +19,13 @@ exports.getMain = async (req, res) => {
 exports.about = (req, res) => {
     const ar = req.body.ar;
     const en = req.body.en;
+    const video = req.body.video;
     About.findOne()
         .then(a => {
             if (a) {
                 a.ar = ar;
                 a.en = en;
+                a.video = video;
                 if (req.file) {
                     fs.unlink(`public${a.img}`, err => {
                         if (err) {
@@ -37,6 +39,7 @@ exports.about = (req, res) => {
                 const a = new About({
                     ar: ar,
                     en: en,
+                    video: video,
                     img: req.file.path.split('public')[1]
                 })
                 return a.save()
