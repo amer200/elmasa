@@ -35,7 +35,7 @@
     <div class="about_part section_bg">
         <div class="container-fluid">
             <div class="row justify-content-end">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-5 col-md-6">
                     <div class="about_part_text" style="text-align: right;">
                         <h2>من نحن</h2>
                         <p>
@@ -113,12 +113,12 @@
                             <div class="single_project_slide">
                                 <div class="row">
                                     <% p.forEach(p=>{ %>
-                                        <div class="col-lg-6 col-md-6">
+                                        <div class="col-lg-4 col-md-6">
                                             <img src="<%=p.imgs[0]%>" alt="#">
                                             <div class="single_project_text" style="text-align: right;">
 
                                                 <p>
-                                                    <%=p.desc.ar.slice(8) %>...
+                                                    <%=p.desc.ar.slice(0,50) %>...
                                                 </p>
                                                 <a href="/project/<%=p._id%>" class="btn_1">المزيد<span><img
                                                             src="/main/img/icon/left.svg" alt=""></span> </a>
