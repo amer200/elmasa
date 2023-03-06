@@ -95,7 +95,7 @@
   var single_page = $('.single_page_special_item');
   if (single_page.length) {
     single_page.owlCarousel({
-      items: 4,
+      items: 3,
       loop: true,
       dots: false,
       autoplay: true,

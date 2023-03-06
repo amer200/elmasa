@@ -4189,9 +4189,7 @@ ul {
 }
 
 /* line 23, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_single_page_special.scss */
-.single_page_special .single_page_special_item .single_slide_item:hover {
-  background-color: #E84C4D;
-}
+
 
 /* line 25, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_single_page_special.scss */
 .single_page_special .single_page_special_item .single_slide_item:hover h3 {
@@ -6520,6 +6518,8 @@ h6 {
 /* carousel */
 .owl-carousel .owl-item img {
   width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* conatct */
