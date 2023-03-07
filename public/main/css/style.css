@@ -3223,7 +3223,9 @@ ul {
 
 /* line 60, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_service_part.scss */
 .service_part .owl-prev,
-.service_part .owl-next {
+.service_part .owl-next,
+.our_clients .owl-prev,
+.our_clients .owl-next {
   background-color: transparent;
   height: 40px;
   width: 40px;
@@ -3240,13 +3242,16 @@ ul {
 
 /* line 73, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_service_part.scss */
 .service_part .owl-prev:hover,
-.service_part .owl-next:hover {
+.service_part .owl-next:hover,
+.our_clients .owl-prev:hover,
+.our_clients .owl-next:hover {
   background-color: #E84C4D !important;
   color: #fff !important;
 }
 
 /* line 78, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_service_part.scss */
-.service_part .owl-prev {
+.service_part .owl-prev,
+.our_clients .owl-prev {
   margin-right: 80px;
 }
 
@@ -7034,4 +7039,29 @@ h6 {
     white-space: normal !important;
     font-size: 16px !important;
   }
+}
+
+/* edits */
+.our_speciality .single_page_special {
+  position: relative;
+  top: -50px;
+}
+
+.clients_images_top {
+  width: 80%;
+  height: 100px;
+
+  margin: auto;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.clients_images_top img {
+  height: 100%;
+}
+
+
+.our_clients {
+  padding: 120px 0;
 }
