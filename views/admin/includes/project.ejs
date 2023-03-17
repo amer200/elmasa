@@ -29,15 +29,77 @@
                 <% projects.forEach(s=>{%>
                     <li class="list-group-item"><span>
                             <%=s.name.ar%>/ <%=s.name.en%>
-                        </span> <button type="button" class="btn btn-danger" onclick="removeProject('<%=s._id%>')"
+                        </span> <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#Modal<%=s._id%>">
+                            edit
+                        </button><button type="button" class="btn btn-danger" onclick="removeProject('<%=s._id%>')"
                             style="float: right;">remove</button></li>
+                    <!-- Modal -->
+                    <div class="modal fade" id="#Modal<%=s._id%>" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/admin/add-project" method="post" enctype="multipart/form-data"
+                                        id="newProjectform">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">project name</label>
+                                            <input type="text" name="nameen" class="form-control"
+                                                placeholder="project name">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">اسم المشروع</label>
+                                            <input type="text" name="namear" class="form-control"
+                                                placeholder="اسم المشروع">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="txt">project description</label>
+                                            <textarea name="descen" id="projectTinaEn" class="form-control" cols="30"
+                                                rows="6">
+                                            </textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="txt">وصف المشروع</label>
+                                            <input type="hidden" name="descar" id="projectAr">
+                                            <textarea name="descen" id="projectTinaAr"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <select class="form-select" name="categ"
+                                                aria-label="Disabled select example">
+                                                <option selected></option>
+                                                <% categs.forEach(c=>{%>
+                                                    <option value="<%=c._id%>">
+                                                        <%=c.ar%>/<%=c.en%>
+                                                    </option>
+                                                    <%})%>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="file" name="img" class="form-control" multiple>
+                                        </div>
+                                        <button type="submit" class="btn btn-dark">submit</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <%})%>
             </ul>
         </div>
     </div>
     <div class="col-6">
         <h4>add project</h4>
-        <form action="/admin/add-project" method="post" enctype="multipart/form-data">
+        <form action="/admin/add-project" method="post" enctype="multipart/form-data" id="newProjectform">
             <div class="mb-3">
                 <label for="name" class="form-label">project name</label>
                 <input type="text" name="nameen" class="form-control" placeholder="project name">
@@ -48,28 +110,14 @@
             </div>
             <div class="mb-3">
                 <label for="txt">project description</label>
-                <textarea name="descen" class="form-control" cols="30" rows="6"></textarea>
+                <textarea name="descen" id="projectTinaEn" class="form-control" cols="30" rows="6">
+                </textarea>
             </div>
             <div class="mb-3">
                 <label for="txt">وصف المشروع</label>
-                <textarea name="descar" class="form-control" cols="30" rows="6"></textarea>
+                <input type="hidden" name="descar" id="projectAr">
+                <textarea name="descen" id="projectTinaAr"></textarea>
             </div>
-            <!-- <div class="mb-3" style="border: 2px solid #fff; padding: 20px;" id="detailsBox">
-                <label for="details" style="display: block;">تفاصيل المشروع</label>
-                <input type="text" name="detailsnamear" class="form-control" style="width: 40%; display: inline;"
-                    placeholder="تفاصيل" required>
-                <input type="text" name="detailsdataar" class="form-control" style="width: 40%; display: inline;"
-                    placeholder="اكتب التفصيلة" required>
-                <hr>
-                <label for="details" style="display: block;">project details</label>
-                <input type="text" name="detailsnameen" class="form-control" style="width: 40%; display: inline;"
-                    placeholder="details" required>
-                <input type="text" name="detailsdataen" class="form-control" style="width: 40%; display: inline;"
-                    placeholder="write details" required>
-                <hr>
-                <button type="button" id="addDetailsBtn" class="btn btn-dark"
-                    onclick="addDetails('detailsBox', 'addDetailsBtn')"> + </button>
-            </div> -->
             <div class="mb-3">
                 <select class="form-select" name="categ" aria-label="Disabled select example">
                     <option selected>categgory</option>
