@@ -14,7 +14,7 @@
                                     <%=p.name.ar%>
                                 </h1>
                                 <p>
-                                    <%= p.desc.ar.slice(0,30)%> ...
+                                    <%- p.desc.ar.slice(0,30)%> ...
                                 </p>
                                 <div class="banner_btn">
                                     <a href="/project/<%=p._id%>" class="btn_1">learn more <span><img
@@ -122,7 +122,7 @@
                         <h2>من نحن</h2>
                         <p>
 
-                            <%=about.ar.slice(0,200)%>
+                            <%-about.ar.slice(0,200)%>
                         </p>
                         <a href="/about" class="btn_1">المزيد<span><img src="/main/img/icon/left.svg" alt=""></span>
                         </a>

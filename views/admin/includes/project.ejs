@@ -35,7 +35,7 @@
                         </button><button type="button" class="btn btn-danger" onclick="removeProject('<%=s._id%>')"
                             style="float: right;">remove</button></li>
                     <!-- Modal -->
-                    <div class="modal fade" id="#Modal<%=s._id%>" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    <div class="modal fade" id="Modal<%=s._id%>" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -45,33 +45,37 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="/admin/add-project" method="post" enctype="multipart/form-data"
-                                        id="newProjectform">
+                                    <form action="/admin/edit-project/<%=s._id%>" method="post"
+                                        enctype="multipart/form-data" id="newProjectform">
                                         <div class="mb-3">
                                             <label for="name" class="form-label">project name</label>
                                             <input type="text" name="nameen" class="form-control"
-                                                placeholder="project name">
+                                                value="<%=s.name.en%>">
                                         </div>
                                         <div class="mb-3">
                                             <label for="name" class="form-label">اسم المشروع</label>
                                             <input type="text" name="namear" class="form-control"
-                                                placeholder="اسم المشروع">
+                                                value="<%=s.name.ar%>">
                                         </div>
                                         <div class="mb-3">
                                             <label for="txt">project description</label>
-                                            <textarea name="descen" id="projectTinaEn" class="form-control" cols="30"
+                                            <textarea name="descen" id="textarea_editor" class="form-control" cols="30"
                                                 rows="6">
+                                                <%-s.desc.en%>
                                             </textarea>
                                         </div>
                                         <div class="mb-3">
                                             <label for="txt">وصف المشروع</label>
-                                            <input type="hidden" name="descar" id="projectAr">
-                                            <textarea name="descen" id="projectTinaAr"></textarea>
+                                            <textarea name="descar" id="textarea_editor">
+                                                <%-s.desc.ar%>
+                                            </textarea>
                                         </div>
                                         <div class="mb-3">
                                             <select class="form-select" name="categ"
                                                 aria-label="Disabled select example">
-                                                <option selected></option>
+                                                <option selected value="<%=s.categ._id%>">
+                                                    <%=s.categ.ar%>/<%=s.categ.en%>
+                                                </option>
                                                 <% categs.forEach(c=>{%>
                                                     <option value="<%=c._id%>">
                                                         <%=c.ar%>/<%=c.en%>
@@ -110,13 +114,12 @@
             </div>
             <div class="mb-3">
                 <label for="txt">project description</label>
-                <textarea name="descen" id="projectTinaEn" class="form-control" cols="30" rows="6">
+                <textarea name="descen" id="textarea_editor" class="form-control" cols="30" rows="6">
                 </textarea>
             </div>
             <div class="mb-3">
                 <label for="txt">وصف المشروع</label>
-                <input type="hidden" name="descar" id="projectAr">
-                <textarea name="descen" id="projectTinaAr"></textarea>
+                <textarea name="descar" id="textarea_editor"></textarea>
             </div>
             <div class="mb-3">
                 <select class="form-select" name="categ" aria-label="Disabled select example">

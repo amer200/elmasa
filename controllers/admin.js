@@ -5,7 +5,7 @@ const Serv = require('../models/serv');
 const fs = require('fs');
 exports.getMain = async (req, res) => {
     const about = await About.findOne();
-    const projects = await Project.find();
+    const projects = await Project.find().populate('categ');
     const categ = await projectcateg.find();
     const servs = await Serv.find();
     res.render('admin/index', {
@@ -54,40 +54,6 @@ exports.about = (req, res) => {
 }
 /* projects */
 exports.addProject = (req, res) => {
-    // let details = [];
-    // const detailsNar = req.body.detailsnamear;
-    // const detailsNen = 2;
-    // const detailsDar = req.body.detailsdataar;
-    // const detailsDen = 2;
-    // if (!true) {
-    //     details = [
-    //         {
-    //             name: {
-    //                 ar: detailsNar,
-    //                 en: detailsNen
-    //             },
-    //             data: {
-    //                 ar: detailsDar,
-    //                 en: detailsDen
-    //             }
-    //         }
-    //     ]
-    // } else {
-    //     for (let i = 0; i < detailsDar.length; i++) {
-    //         let o =
-    //         {
-    //             name: {
-    //                 ar: detailsNar[i],
-    //                 en: detailsNen[i]
-    //             },
-    //             data: {
-    //                 ar: detailsDar[i],
-    //                 en: detailsDen[i]
-    //             }
-    //         }
-    //         details.push(o);
-    //     }
-    // }
     const name = {
         ar: req.body.namear,
         en: req.body.nameen
@@ -154,6 +120,36 @@ exports.removeProject = (req, res) => {
             res.send({
                 msg: 'ok'
             })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+exports.EditProject = (req, res) => {
+    const id = req.params.id;
+    const name = {
+        ar: req.body.namear,
+        en: req.body.nameen
+    };
+    const desc = {
+        ar: req.body.descar,
+        en: req.body.descen
+    };
+    const categ = req.body.categ;
+    let imgs = []
+    req.files.forEach(i => {
+        imgs.push(i.path.split('public')[1])
+    })
+    Project.findById(id)
+        .then(p => {
+            p.name = name;
+            p.desc = desc;
+            p.categ = categ;
+            p.imgs = p.imgs.push(...imgs)
+            return p.save()
+        })
+        .then(p => {
+            res.redirect('/admin');
         })
         .catch(err => {
             console.log(err)

@@ -16,6 +16,7 @@ route.post('/add-project-categ', isAuth.isAdmin, adminController.addProjectCateg
 route.get('/remove-project-categ/:id', isAuth.isAdmin, adminController.removeProjectCateg);
 route.post('/add-project', isAuth.isAdmin, adminController.addProject)
 route.get('/remove-project/:id', isAuth.isAdmin, adminController.removeProject)
+route.post('/edit-project/:id', isAuth.isAdmin, adminController.EditProject)
 /****************************add-faq *************************************/
 // route.post('/add-faq', isAuth.isAdmin, adminController.addFaq);
 // route.get('/remove-faq/:id', isAuth.isAdmin, adminController.removeFaq);
