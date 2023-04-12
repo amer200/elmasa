@@ -10,6 +10,7 @@ route.get('/', isAuth.isAdmin, adminController.getMain);
 route.post('/about', isAuth.isAdmin, adminController.about);
 /********************************services *****************************/
 route.post('/add-serv', isAuth.isAdmin, adminController.addServ);
+route.post('/edit-serv/:id', isAuth.isAdmin, adminController.editServ);
 route.get('/remove-serv/:id', isAuth.isAdmin, adminController.removeServ);
 /****************************projects *********************************/
 route.post('/add-project-categ', isAuth.isAdmin, adminController.addProjectCateg);
@@ -17,6 +18,7 @@ route.get('/remove-project-categ/:id', isAuth.isAdmin, adminController.removePro
 route.post('/add-project', isAuth.isAdmin, adminController.addProject)
 route.get('/remove-project/:id', isAuth.isAdmin, adminController.removeProject)
 route.post('/edit-project/:id', isAuth.isAdmin, adminController.EditProject)
+route.post('/remove-project-img/:id', isAuth.isAdmin, adminController.removeProjectImg);
 /****************************add-faq *************************************/
 // route.post('/add-faq', isAuth.isAdmin, adminController.addFaq);
 // route.get('/remove-faq/:id', isAuth.isAdmin, adminController.removeFaq);

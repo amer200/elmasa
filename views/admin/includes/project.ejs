@@ -84,6 +84,18 @@
                                             </select>
                                         </div>
                                         <div class="mb-3">
+                                            <ul class="list-group">
+                                                <%s.imgs.forEach(i=>{ %>
+                                                    <li class="list-group-item" style="display: inline-block;">
+                                                        <button type="button" class="btn btn-danger"
+                                                            onclick="removeProjectImg('<%=s._id%>', '<%=i%>')">remove</button>
+                                                        <img src="<%=i%>" alt="img" style="width: 100px;">
+                                                    </li>
+                                                    <%})%>
+                                            </ul>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">add new images</label>
                                             <input type="file" name="img" class="form-control" multiple>
                                         </div>
                                         <button type="submit" class="btn btn-dark">submit</button>
@@ -160,5 +172,24 @@
                     alert(err)
                 })
         }
+    }
+    const removeProjectImg = (id, img) => {
+        fetch(`/admin/remove-project-img/${id}`, {
+            Method: 'post',
+            Headers: {
+                Accept: 'application.json',
+                'Content-Type': 'application/json'
+            },
+            Body: img
+        })
+            .then(response => {
+                return response.json()
+            })
+            .then(data => {
+                console.log(data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
     }
 </script>

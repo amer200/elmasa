@@ -136,20 +136,41 @@ exports.EditProject = (req, res) => {
         en: req.body.descen
     };
     const categ = req.body.categ;
-    let imgs = []
-    req.files.forEach(i => {
-        imgs.push(i.path.split('public')[1])
-    })
     Project.findById(id)
         .then(p => {
             p.name = name;
             p.desc = desc;
             p.categ = categ;
-            p.imgs = p.imgs.push(...imgs)
+            if (req.files) {
+                req.files.forEach(i => {
+                    p.imgs.push(i.path.split('public')[1])
+                })
+            }
             return p.save()
         })
         .then(p => {
+            console.log(p)
             res.redirect('/admin');
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+exports.removeProjectImg = (req, res) => {
+    const id = req.params.id;
+    const img = req.body.img;
+    console.log(req.body)
+    Project.findById(id)
+        .then(p => {
+            p.imgs = p.imgs.filter(i => {
+                return i != img
+            })
+            return p.save()
+        })
+        .then(p => {
+            res.status(200).json({
+                msg: "ok"
+            })
         })
         .catch(err => {
             console.log(err)
@@ -172,6 +193,33 @@ exports.addServ = (req, res) => {
         content: content
     })
     serv.save()
+        .then(s => {
+            res.redirect('/admin')
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+exports.editServ = (req, res) => {
+    const id = req.params.id;
+    // const img = req.file.path.split('public')[1];
+    const title = {
+        ar: req.body.titlear,
+        en: req.body.titleen
+    };
+    const content = {
+        ar: req.body.ar,
+        en: req.body.en
+    }
+    Serv.findById(id)
+        .then(serv => {
+            serv.content = content;
+            serv.title = title;
+            if (req.file) {
+                serv.img = req.file.path.split('public')[1];
+            }
+            return serv.save()
+        })
         .then(s => {
             res.redirect('/admin')
         })

@@ -29,8 +29,61 @@
             <ul class="list-group">
                 <% servs.forEach(s=>{%>
                     <li class="list-group-item"><img src="<%=s.img%>" alt="img" style="width: 80px;
-                        height: 50px;"> <button type="button" class="btn btn-danger" onclick="removeServ('<%=s._id%>')"
-                            style="float: right;">remove</button></li>
+                        height: 50px;">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#edit-serv<%=s._id%>">
+                            edit
+                        </button>
+                        <button type="button" class="btn btn-danger" onclick="removeServ('<%=s._id%>')"
+                            style="float: right;">remove</button>
+                    </li>
+                    <div class="modal fade" id="edit-serv<%=s._id%>" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">
+                                        <%=s.title.ar%>
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/admin/edit-serv/<%=s._id%>" method="post"
+                                        enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label for="title" class="form-label">title</label>
+                                            <input type="text" name="titleen" class="form-control"
+                                                value="<%=s.title.en%>">
+                                            <label for="title" class="form-label">العنوان</label>
+                                            <input type="text" name="titlear" class="form-control"
+                                            value="<%=s.title.ar%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="txt">content</label>
+                                            <textarea name="en" class="form-control" cols="30" rows="6">
+                                                <%=s.content.en%>
+                                            </textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="txt">المحتوى</label>
+                                            <textarea name="ar" class="form-control" cols="30" rows="6">
+                                                <%=s.content.ar%>
+                                            </textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="file" name="img" class="form-control">
+                                        </div>
+                                        <button type="submit" class="btn btn-dark">submit</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <%})%>
             </ul>
         </div>
