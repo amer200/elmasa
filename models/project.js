@@ -11,6 +11,7 @@ const projectSchema = mongoose.Schema({
     },
     categ: { type: mongoose.Schema.Types.ObjectId, ref: 'projectcateg' },
     imgs: [String],
+    map: String,
     details: [
         {
             name: {

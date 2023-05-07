@@ -70,16 +70,19 @@
     <!-- project details gallery start-->
 
     <!-- map us part start-->
-    <section class="map_part">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="map_iner">
-                        <div class="map"></div>
+    <%if(p.map){%>
+        <section class="map_part project_map">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>project map</h2>
+                        <div class="map_iner">
+                            <%-p.map%>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- map us part end-->
-    <%- include('includes/footer') %>
+        </section>
+        <%}%>
+            <!-- map us part end-->
+            <%- include('includes/footer') %>
