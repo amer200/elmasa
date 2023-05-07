@@ -1,16 +1,19 @@
 const About = require('../models/about');
 const Project = require('../models/project');
+const Blog = require('../models/blog');
 const projectcateg = require('../models/projectcateg');
 const Serv = require('../models/serv');
 const fs = require('fs');
 exports.getMain = async (req, res) => {
     const about = await About.findOne();
     const projects = await Project.find().populate('categ');
+    const blogs = await Blog.find();
     const categ = await projectcateg.find();
     const servs = await Serv.find();
     res.render('admin/index', {
         about: about,
         projects: projects,
+        blogs: blogs,
         categs: categ,
         servs: servs
     })
@@ -20,12 +23,14 @@ exports.about = (req, res) => {
     const ar = req.body.ar;
     const en = req.body.en;
     const video = req.body.video;
+    const map = req.body.map;
     About.findOne()
         .then(a => {
             if (a) {
                 a.ar = ar;
                 a.en = en;
                 a.video = video;
+                a.map = map;
                 if (req.file) {
                     fs.unlink(`public${a.img}`, err => {
                         if (err) {
@@ -40,6 +45,7 @@ exports.about = (req, res) => {
                     ar: ar,
                     en: en,
                     video: video,
+                    map: map,
                     img: req.file.path.split('public')[1]
                 })
                 return a.save()
@@ -63,6 +69,7 @@ exports.addProject = (req, res) => {
         en: req.body.descen
     };
     const categ = req.body.categ;
+    const map = req.body.map;
     let imgs = []
     req.files.forEach(i => {
         imgs.push(i.path.split('public')[1])
@@ -71,6 +78,7 @@ exports.addProject = (req, res) => {
         name: name,
         desc: desc,
         categ: categ,
+        map: map,
         imgs: imgs
     })
     project.save()
@@ -136,11 +144,13 @@ exports.EditProject = (req, res) => {
         en: req.body.descen
     };
     const categ = req.body.categ;
+    const map = req.body.map;
     Project.findById(id)
         .then(p => {
             p.name = name;
             p.desc = desc;
             p.categ = categ;
+            p.map = map;
             if (req.files) {
                 req.files.forEach(i => {
                     p.imgs.push(i.path.split('public')[1])
@@ -255,4 +265,70 @@ exports.postAdminLogin = (req, res) => {
 exports.adminLogOut = (req, res) => {
     req.session.destroy();
     res.redirect('/')
+}
+
+/* blog */
+exports.addBlog = (req, res) => {
+    const name = {
+        ar: req.body.namear,
+        en: req.body.nameen
+    };
+    const desc = {
+        ar: req.body.descar,
+        en: req.body.descen
+    };
+
+    const blog = new Blog({
+        name: name,
+        desc: desc,
+        img: req.file.path.split('public')[1]
+    })
+    blog.save()
+        .then(s => {
+            res.redirect('/admin');
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+
+exports.removeBlog = (req, res) => {
+    const id = req.params.id;
+    Blog.findByIdAndRemove(id)
+        .then(b => {
+            fs.unlink(`public${b.img}`, (err) => console.log(err))
+            res.send({
+                msg: 'ok'
+            })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+exports.EditBlog = (req, res) => {
+    const id = req.params.id;
+    const name = {
+        ar: req.body.namear,
+        en: req.body.nameen
+    };
+    const desc = {
+        ar: req.body.descar,
+        en: req.body.descen
+    };
+    Blog.findById(id)
+        .then(b => {
+            b.name = name;
+            b.desc = desc;
+            if (req.file) {
+                b.img = req.file.path.split('public')[1];
+            }
+            return b.save()
+        })
+        .then(b => {
+            console.log(b)
+            res.redirect('/admin');
+        })
+        .catch(err => {
+            console.log(err)
+        })
 }

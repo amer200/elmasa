@@ -21,3 +21,8 @@ li {
     background-position: center;
 
 }
+
+/* admin sidebar */
+#menu li {
+    cursor: pointer !important;
+}

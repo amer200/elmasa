@@ -1,9 +1,11 @@
 const About = require('../models/about');
 const Project = require('../models/project');
+const Blog = require('../models/blog');
 const Serv = require('../models/serv');
 exports.getMain = async (req, res) => {
     const about = await About.findOne();
     const projects = await Project.find().populate('categ');
+    const blogs = await Blog.find();
     const servs = await Serv.find();
     const parts = projects.reduce(function (result, value, index, array) {
         if (index % 2 === 0)
@@ -18,6 +20,7 @@ exports.getMain = async (req, res) => {
         about: about,
         projectsP: parts,
         projects: projects,
+        blogs: blogs,
         servs: servs
     })
 }
@@ -43,6 +46,30 @@ exports.getProjectById = async (req, res) => {
         p: project
     })
 }
+
+exports.getBlogs = async (req, res) => {
+    const blogs = await Blog.find();
+    let lang = 'en';
+    if (req.session.lang) {
+        lang = req.session.lang;
+    }
+    console.log(blogs[0])
+    res.render(`main-${lang}/blog`, {
+        blogs: blogs
+    })
+}
+exports.getBlogById = async (req, res) => {
+    const id = req.params.id;
+    const blog = await Blog.findById(id);
+    let lang = 'en';
+    if (req.session.lang) {
+        lang = req.session.lang;
+    }
+    res.render(`main-${lang}/single_blog`, {
+        b: blog
+    })
+}
+
 exports.getAbout = async (req, res) => {
     const about = await About.findOne();
     let lang = 'en';

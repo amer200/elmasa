@@ -1,0 +1,116 @@
+<div class="d-none row all-forms" id="blogs">
+    <div class="col-6">
+        <div class="col-12" style="margin-top: 10px;">
+            <h4>edit blogs</h4>
+            <ul class="list-group">
+                <% blogs.forEach(s=>{%>
+                    <li class="list-group-item"><span>
+                            <%=s.name.ar%>/ <%=s.name.en%>
+                        </span> <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#Modal<%=s._id%>">
+                            edit
+                        </button><button type="button" class="btn btn-danger" onclick="removeBlog('<%=s._id%>')"
+                            style="float: right;">remove</button></li>
+                    <!-- Modal -->
+                    <div class="modal fade" id="Modal<%=s._id%>" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="/admin/edit-blog/<%=s._id%>" method="post"
+                                        enctype="multipart/form-data" id="newBlogform">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">blog name</label>
+                                            <input type="text" name="nameen" class="form-control"
+                                                value="<%=s.name.en%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">اسم المشروع</label>
+                                            <input type="text" name="namear" class="form-control"
+                                                value="<%=s.name.ar%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="txt">blog description</label>
+                                            <textarea name="descen" id="textarea_editor" class="form-control" cols="30"
+                                                rows="6">
+                                                <%-s.desc.en%>
+                                            </textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="txt">وصف المشروع</label>
+                                            <textarea name="descar" id="textarea_editor">
+                                                <%-s.desc.ar%>
+                                            </textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <ul class="list-group">
+                                                <li class="list-group-item" style="display: inline-block;margin: auto;"
+                                                    id="img<%=s.img%>">
+                                                    <img src="<%=s.img%>" alt="img" style="width: 150px;">
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">change image</label>
+                                            <input type="file" name="img" class="form-control" multiple>
+                                        </div>
+                                        <button type="submit" class="btn btn-dark">submit</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%})%>
+            </ul>
+        </div>
+    </div>
+    <div class="col-6">
+        <h4>add blog</h4>
+        <form action="/admin/add-blog" method="post" enctype="multipart/form-data" id="newBlogform">
+            <div class="mb-3">
+                <label for="name" class="form-label">blog name</label>
+                <input type="text" name="nameen" class="form-control" placeholder="blog name">
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">اسم المقال</label>
+                <input type="text" name="namear" class="form-control" placeholder="اسم المقال">
+            </div>
+            <div class="mb-3">
+                <label for="txt">blog description</label>
+                <textarea name="descen" id="textarea_editor" class="form-control" cols="30" rows="6">
+                </textarea>
+            </div>
+            <div class="mb-3">
+                <label for="txt">وصف المقال</label>
+                <textarea name="descar" id="textarea_editor"></textarea>
+            </div>
+            <div class="mb-3">
+                <input type="file" name="img" class="form-control" multiple>
+            </div>
+            <button type="submit" class="btn btn-dark">submit</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    const removeBlog = (id) => {
+        if (confirm('warn! you will delete this slide?')) {
+            fetch(`/admin/remove-blog/${id}`)
+                .then(res => {
+                    return location.reload()
+                })
+                .catch(err => {
+                    alert(err)
+                })
+        }
+    }
+</script>

@@ -19,6 +19,10 @@ route.post('/add-project', isAuth.isAdmin, adminController.addProject)
 route.get('/remove-project/:id', isAuth.isAdmin, adminController.removeProject)
 route.post('/edit-project/:id', isAuth.isAdmin, adminController.EditProject)
 route.post('/remove-project-img/:id', isAuth.isAdmin, adminController.removeProjectImg);
+/************************** blog *********************************** */
+route.post('/add-blog', isAuth.isAdmin, adminController.addBlog);
+route.get('/remove-blog/:id', isAuth.isAdmin, adminController.removeBlog)
+route.post('/edit-blog/:id', isAuth.isAdmin, adminController.EditBlog)
 /****************************add-faq *************************************/
 // route.post('/add-faq', isAuth.isAdmin, adminController.addFaq);
 // route.get('/remove-faq/:id', isAuth.isAdmin, adminController.removeFaq);

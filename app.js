@@ -41,6 +41,8 @@ app.post('/admin/add-serv', upload.single('img'));
 app.post('/admin/edit-serv/:id', upload.single('img'));
 app.post('/admin/add-project', upload.array('img'));
 app.post('/admin/edit-project/:id', upload.array('img'));
+app.post('/admin/add-blog', upload.single('img'));
+app.post('/admin/edit-blog/:id', upload.single('img'));
 /********************************************************************************* */
 const adminRoutes = require('./routes/admin');
 const mainRoutes = require('./routes/main');
