@@ -44,8 +44,7 @@
                     </div>
                 </div>
             </div>
-    </div>
-    </section>
+        </section>
     </div>
 
     <!-- our clients part start-->
@@ -137,7 +136,6 @@
     </div>
     <!-- about part end-->
 
-
     <!-- service part start-->
     <section class="service_part">
         <div class="container">
@@ -194,10 +192,9 @@
                             <div class="single_project_slide">
                                 <div class="row">
                                     <% p.forEach(p=>{ %>
-                                        <div class="col-lg-6 col-md-6">
-                                            <img src="<%=p.imgs[0]%>" alt="#">
+                                        <div class="col-lg-6 col-md-6 d-flex flex-column align-items-center">
+                                            <img src="<%=p.imgs[0]%>" alt="#" class="project-img">
                                             <div class="single_project_text">
-
                                                 <p>
                                                     <%=p.desc.en.slice(0,50) %>...
                                                 </p>
@@ -214,6 +211,49 @@
             </div>
         </div>
     </section>
+
+    <!--#region blogs part end-->
+    <div class="blogs_part section_bg">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-4">
+                    <div class="section_tittle">
+                        <h2>blogs</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="project_slider owl-carousel">
+                        <% blogs.forEach(b=>{%>
+                            <div class="single_project_slide">
+                                <div class="row justify-content-end" style="min-height: 280px;">
+                                    <div class="col-md-6">
+                                        <div class="blog_img">
+                                            <img src="<%=b.img%>" alt="#">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="blog_part_text">
+                                            <h3><%-b.name.en%></h3>
+                                            <p>
+                                                <%-b.desc.en.slice(0,200)%>...
+                                            </p>
+                                            <a href="/blog/<%=b._id%>" class="btn_1">learn more <span><img
+                                                        src="/main/img/icon/left.svg" alt=""></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <%})%>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--#endregion blogs part end-->
 
     <!-- map us part start-->
     <section class="map_part">

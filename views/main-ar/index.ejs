@@ -121,7 +121,6 @@
                     <div class="about_part_text" style="text-align: right;">
                         <h2>من نحن</h2>
                         <p>
-
                             <%-about.ar.slice(0,200)%>
                         </p>
                         <a href="/about" class="btn_1">المزيد<span><img src="/main/img/icon/left.svg" alt=""></span>
@@ -195,14 +194,15 @@
                             <div class="single_project_slide">
                                 <div class="row">
                                     <% p.forEach(p=>{ %>
-                                        <div class="col-lg-4 col-md-6">
+                                        <div class="col-12 col-md-12 col-lg-4">
                                             <img src="<%=p.imgs[0]%>" alt="#">
                                             <div class="single_project_text" style="text-align: right;">
 
                                                 <p>
                                                     <%=p.desc.ar.slice(0,50) %>...
                                                 </p>
-                                                <a href="/project/<%=p._id%>" class="btn_1">المزيد<span><img
+                                                <a href="/project/<%=p._id%>"
+                                                    class="btn_1 d-inline-block m-auto">المزيد<span><img
                                                             src="/main/img/icon/left.svg" alt=""></span> </a>
                                             </div>
                                         </div>
@@ -216,6 +216,50 @@
         </div>
     </section>
     <!-- project_part part end-->
+
+    <!--#region blogs part end-->
+    <div class="blogs_part section_bg">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-4">
+                    <div class="section_tittle">
+                        <h2>المقالات</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="project_slider owl-carousel">
+                        <% blogs.forEach(b=>{%>
+                            <div class="single_project_slide">
+                                <div class="row justify-content-end" style="min-height: 280px;">
+                                    <div class="col-md-6">
+                                        <div class="blog_part_text">
+                                            <h3><%-b.name.ar%></h3>
+                                            <p>
+                                                <%-b.desc.ar.slice(0,200)%>...
+                                            </p>
+                                            <a href="/blog/<%=b._id%>" class="btn_1">المزيد<span><img
+                                                        src="/main/img/icon/left.svg" alt=""></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="blog_img">
+                                            <img src="<%=b.img%>" alt="#">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <%})%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion blogs part end-->
+
+
     <!-- contact us part start-->
     <!-- <section class="contact_us">
         <div class="container">
