@@ -1,0 +1,43 @@
+<%- include('includes/head') %>
+    <!-- breadcrumb start-->
+    <section class="breadcrumb breadcrumb_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb_iner text-center">
+                        <div class="breadcrumb_iner_item">
+                            <h2>المقالات</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb start-->
+
+    <!-- blog_details start-->
+    <section class="blog_details section_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>
+                        <%=b.name.ar%>
+                    </h2>
+                </div>
+                <div class="col-lg-12">
+                    <div class="blog_details_img">
+                        <img src="<%=b.img%>" alt="#" style="max-height: 400px;">
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="blog_details_text">
+                        <p>
+                            <%- b.desc.ar%>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- blog_details end-->
+    <%- include('includes/footer') %>

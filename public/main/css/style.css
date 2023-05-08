@@ -88,7 +88,7 @@ input:focus {
 }
 
 /* line 41, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_common.scss */
-.single_padding_top {
+. padding_top {
   padding-top: 140px !important;
 }
 
@@ -126,7 +126,7 @@ input:focus {
 
 /* line 56, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_common.scss */
 .padding_top {
-  padding-top: 140px;
+  padding-top: 100px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -475,7 +475,7 @@ ul {
 
 /* line 249, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_common.scss */
 .padding_bottom {
-  padding-bottom: 130px;
+  padding-bottom: 100px;
 }
 
 @media (max-width: 575px) {
@@ -1295,8 +1295,8 @@ ul {
 
   /* line 438, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_blog.scss */
   .blog_categorie_area {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 }
 
@@ -2667,6 +2667,10 @@ ul {
   padding-top: 40px;
 }
 
+.banner_part .banner_text_iner {
+  min-height: 280px;
+}
+
 /* line 35, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_banner.scss */
 .banner_part .banner_text h5 {
   font-size: 18px;
@@ -2760,8 +2764,8 @@ ul {
   text-align: center;
   color: #fff !important;
   position: absolute;
-  left: -100px;
-  top: 50%;
+  left: -90px;
+  top: 30%;
   transition: all 1s;
   transform: rotate(-90deg);
 }
@@ -2974,22 +2978,22 @@ ul {
 
 /* line 1, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
 .about_part,
-.blog_part {
-  padding: 230px 0 50px;
+.blogs_part {
+  padding: 100px 0 70px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
 
   /* line 1, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
   .about_part,
-  .blog_part {
-    padding: 145px 0 80px;
+  .blogs_part {
+    padding: 80px 0 80px;
   }
 }
 
 /* line 6, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
 .about_part .about_part_text,
-.blog_part .blog_part_text {
+.blogs_part .blog_part_text {
   padding-left: 78px;
 }
 
@@ -2997,9 +3001,9 @@ ul {
 
   /* line 6, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
   .about_part .about_part_text,
-  .blog_part .blog_part_text {
+  .blogs_part .blog_part_text {
     padding-left: 0;
-    padding-top: 100px;
+    padding-top: 20px;
   }
 }
 
@@ -3007,7 +3011,7 @@ ul {
 
   /* line 6, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
   .about_part .about_part_text,
-  .blog_part .blog_part_text {
+  .blogs_part .blog_part_text {
     padding-left: 0;
     margin-top: 25px;
   }
@@ -3017,7 +3021,7 @@ ul {
 
   /* line 6, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
   .about_part .about_part_text,
-  .blog_part .blog_part_text {
+  .blogs_part .blog_part_text {
     padding-left: 0;
     padding-top: 0;
   }
@@ -3027,14 +3031,14 @@ ul {
 
   /* line 6, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
   .about_part .about_part_text,
-  .blog_part .blog_part_text {
+  .blogs_part .blog_part_text {
     padding-left: 0;
   }
 }
 
 /* line 23, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
 .about_part .about_part_text h2,
-.blog_part .blog_part_text h2 {
+.blogs_part .blog_part_text h2 {
   color: #010101;
   font-weight: 600;
   margin-bottom: 27px;
@@ -3046,7 +3050,7 @@ ul {
 
   /* line 23, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
   .about_part .about_part_text h2,
-  .blog_part .blog_part_text h2 {
+  .blogs_part .blog_part_text h2 {
     font-size: 30px;
   }
 }
@@ -3055,7 +3059,7 @@ ul {
 
   /* line 23, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
   .about_part .about_part_text h2,
-  .blog_part .blog_part_text h2 {
+  .blogs_part .blog_part_text h2 {
     font-size: 30px;
   }
 }
@@ -3064,7 +3068,7 @@ ul {
 
   /* line 23, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
   .about_part .about_part_text h2,
-  .blog_part .blog_part_text h2 {
+  .blogs_part .blog_part_text h2 {
     font-size: 30px;
   }
 }
@@ -3073,7 +3077,7 @@ ul {
 
   /* line 43, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
   .about_part .about_part_text .btn_1,
-  .blog_part .blog_part_text .btn_1 {
+  .blogs_part .blog_part_text .btn_1 {
     margin-bottom: 25px;
   }
 }
@@ -3082,7 +3086,7 @@ ul {
 
   /* line 48, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
   .about_part .about_part_text .btn_1,
-  .blog_part .blog_part_text .btn_1 {
+  .blogs_part .blog_part_text .btn_1 {
     margin-bottom: 25px;
   }
 }
@@ -3091,14 +3095,14 @@ ul {
 
   /* line 53, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
   .about_part .about_part_text .btn_1,
-  .blog_part .blog_part_text .btn_1 {
+  .blogs_part .blog_part_text .btn_1 {
     margin-bottom: 25px;
   }
 }
 
 /* line 63, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
 .about_part .about_img img,
-.blog_part .blog_img img {
+.blogs_part .blog_img img {
   width: 100%;
   max-height: 100%;
   position: absolute;
@@ -3109,7 +3113,7 @@ ul {
 
   /* line 63, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
   .about_part .about_img img,
-  .blog_part .blog_img img {
+  .blogs_part .blog_img img {
     position: relative;
   }
 }
@@ -3118,7 +3122,7 @@ ul {
 
   /* line 63, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
   .about_part .about_img img,
-  .blog_part .blog_img img {
+  .blogs_part .blog_img img {
     position: relative;
   }
 }
@@ -3127,14 +3131,14 @@ ul {
 
   /* line 63, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_about.scss */
   .about_part .about_img img,
-  .blog_part .blog_img img {
+  .blogs_part .blog_img img {
     position: relative;
   }
 }
 
 /* line 1, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_service_part.scss */
 .service_part {
-  padding: 135px 0px 130px;
+  padding: 100px 0px 100px;
   background-image: url(../img/services_bg.png);
   background-position: center left;
   background-size: contain;
@@ -3276,7 +3280,7 @@ ul {
 
 /* line 82, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_service_part.scss */
 .single_service_padding {
-  padding: 130px 0px;
+  padding: 100px 0px;
 }
 
 @media (max-width: 575px) {
@@ -3339,7 +3343,7 @@ ul {
 /* line 26, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_part.scss */
 .project_part .single_project_text {
   position: relative;
-  padding-left: 100px;
+  padding-left: 50px;
   width: 68%;
   margin-top: 65px;
 }
@@ -3502,6 +3506,7 @@ ul {
 
 /* line 122, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_part.scss */
 .project_part .single_project_text .btn_1 {
+  margin: auto;
   display: flex;
   align-items: center;
 }
@@ -3523,7 +3528,9 @@ ul {
 
 /* line 136, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_part.scss */
 .project_part .owl-prev,
-.project_part .owl-next {
+.project_part .owl-next,
+.blogs_part .owl-prev,
+.blogs_part .owl-next {
   background-color: transparent;
   height: 40px;
   width: 40px;
@@ -3540,13 +3547,16 @@ ul {
 
 /* line 151, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_part.scss */
 .project_part .owl-prev:hover,
-.project_part .owl-next:hover {
+.project_part .owl-next:hover,
+.blogs_part .owl-prev:hover,
+.blogs_part .owl-next:hover {
   background-color: #E84C4D !important;
   color: #fff !important;
 }
 
 /* line 157, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_part.scss */
-.project_part .owl-prev {
+.project_part .owl-prev,
+.blogs_part .owl-prev {
   margin-right: 80px;
 }
 
@@ -3863,7 +3873,7 @@ ul {
 
 /* line 144, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_blog_post.scss */
 .single_page_blog {
-  padding-top: 130px;
+  padding-top: 100px;
 }
 
 /*************** contact us start******************/
@@ -3876,7 +3886,7 @@ ul {
 /* line 5, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_contact_us.scss */
 .contact_us .contact_us_iner {
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 95px 0px;
+  padding: 100px 0px;
 }
 
 @media (max-width: 575px) {
@@ -4015,24 +4025,24 @@ ul {
 @media (max-width: 575px) {
 
   /* line 1, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_map.scss */
-  .map_part:not(.project_map) {
-    margin-top: -100px;
+  .map_part {
+    margin-top: 0px;
   }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
 
   /* line 1, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_map.scss */
-  .map_part:not(.project_map) {
-    margin-top: -100px;
+  .map_part {
+    margin-top: 0px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
   /* line 1, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_map.scss */
-  .map_part:not(.project_map) {
-    margin-top: -100px;
+  .map_part {
+    margin-top: 0px;
   }
 }
 
@@ -4357,7 +4367,9 @@ ul {
 
 /* line 64, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
 .project_details_text,
-.project_details_sidebar {
+.project_details_sidebar,
+.blog_details_text,
+.blog_details_sidebar {
   margin-top: 130px;
 }
 
@@ -4365,7 +4377,9 @@ ul {
 
   /* line 64, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
   .project_details_text,
-  .project_details_sidebar {
+  .project_details_sidebar,
+  .blog_details_text,
+  .blog_details_sidebar {
     margin-top: 70px;
   }
 }
@@ -4374,7 +4388,9 @@ ul {
 
   /* line 64, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
   .project_details_text,
-  .project_details_sidebar {
+  .project_details_sidebar,
+  .blog_details_text,
+  .blog_details_sidebar {
     margin-top: 70px;
   }
 }
@@ -4383,7 +4399,9 @@ ul {
 
   /* line 64, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
   .project_details_text,
-  .project_details_sidebar {
+  .project_details_sidebar,
+  .blog_details_text,
+  .blog_details_sidebar {
     margin-top: 70px;
   }
 }
@@ -4392,13 +4410,16 @@ ul {
 
   /* line 64, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
   .project_details_text,
-  .project_details_sidebar {
+  .project_details_sidebar,
+  .blog_details_text,
+  .blog_details_sidebar {
     margin-top: 70px;
   }
 }
 
 /* line 80, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
-.project_details_text h2 {
+.project_details_text h2,
+.blog_details_text h2 {
   text-transform: capitalize;
   font-weight: 800;
   font-size: 48px;
@@ -4407,7 +4428,8 @@ ul {
 @media (max-width: 575px) {
 
   /* line 80, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
-  .project_details_text h2 {
+  .project_details_text h2,
+  .blog_details_text h2 {
     font-size: 25px;
   }
 }
@@ -4415,7 +4437,8 @@ ul {
 @media only screen and (min-width: 576px) and (max-width: 767px) {
 
   /* line 80, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
-  .project_details_text h2 {
+  .project_details_text h2,
+  .blog_details_text h2 {
     font-size: 30px;
   }
 }
@@ -4423,7 +4446,8 @@ ul {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
   /* line 80, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
-  .project_details_text h2 {
+  .project_details_text h2,
+  .blog_details_text h2 {
     font-size: 30px;
   }
 }
@@ -4431,20 +4455,23 @@ ul {
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
 
   /* line 80, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
-  .project_details_text h2 {
+  .project_details_text h2,
+  .blog_details_text h2 {
     font-size: 30px;
   }
 }
 
 /* line 97, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
-.project_details_text p {
+.project_details_text p,
+.blog_details_text p {
   margin-top: 40px;
 }
 
 @media (max-width: 575px) {
 
   /* line 97, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
-  .project_details_text p {
+  .project_details_text p,
+  .blog_details_text p {
     margin-top: 15px;
   }
 }
@@ -4452,7 +4479,8 @@ ul {
 @media only screen and (min-width: 576px) and (max-width: 767px) {
 
   /* line 97, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
-  .project_details_text p {
+  .project_details_text p,
+  .blog_details_text p {
     margin-top: 15px;
   }
 }
@@ -4460,7 +4488,8 @@ ul {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
   /* line 97, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
-  .project_details_text p {
+  .project_details_text p,
+  .blog_details_text p {
     margin-top: 15px;
   }
 }
@@ -4468,7 +4497,8 @@ ul {
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
 
   /* line 97, ../../01 cl html template/New folder/May 2019/176 Interior Heaven/Interior Heaven Html/sass/_project_gallery.scss */
-  .project_details_text p {
+  .project_details_text p,
+  .blog_details_text p {
     margin-top: 15px;
   }
 }
@@ -6661,6 +6691,8 @@ h6 {
 .footer .social li {
   display: inline-block;
   position: relative;
+
+  margin-left: 14px;
 }
 
 .footer .social li a {
@@ -7061,6 +7093,19 @@ h6 {
 }
 
 /* edits */
+.project_part {
+  padding-top: 50px;
+}
+
+.project_part .project-img {
+  max-height: 300px;
+}
+
+.project_part .single_project_slide {
+  min-width: 500px;
+}
+
+
 .our_speciality .single_page_special {
   position: relative;
   top: -50px;
@@ -7082,7 +7127,7 @@ h6 {
 
 
 .our_clients {
-  padding: 120px 0;
+  padding: 100px 0;
 }
 
 /* project map */
@@ -7125,4 +7170,53 @@ h6 {
   .map_part:is(.project_map) .map_iner iframe {
     height: 350px;
   }
+}
+
+/* blogs_part */
+.blogs_part {
+  padding-bottom: 100px;
+}
+
+.blogs_part .btn_1 {
+  display: flex;
+  align-items: center;
+}
+
+.blogs_part .blog_part_text .btn_1 img {
+  position: relative;
+  top: 18px;
+}
+
+.blogs_part .blog_img img {
+  width: 90%;
+  max-height: 350px;
+}
+
+/* single blog */
+.blog_details h2 {
+  font-size: 36px;
+
+  margin-bottom: 50px;
+}
+
+.blog_details .blog_details_text {
+  margin-top: 50px;
+}
+
+/* project, blog pages card */
+.card {
+  min-height: 460px;
+}
+
+.card .card-img-top {
+  max-width: 260px;
+  max-height: 260px;
+
+  margin: auto;
+  margin-top: 10px;
+}
+
+.project_part strong,
+.blogs_part strong {
+  display: none !important;
 }
