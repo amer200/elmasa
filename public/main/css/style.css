@@ -7220,3 +7220,13 @@ h6 {
 .blogs_part strong {
   display: none !important;
 }
+
+/* footer */
+.footer svg {
+  width: 20px;
+  height: 20px;
+}
+
+.footer li a:hover #whats-svg {
+  fill: #3e64ff;
+}
